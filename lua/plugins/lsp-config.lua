@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		opts = {
 			auto_install = true,
-			ensure_installed = { "clangd", "lua_ls", "ts_ls" },
+			ensure_installed = { "clangd", "lua_ls", "ts_ls", "pyright" },
 		},
 	},
 	{
@@ -35,6 +35,9 @@ return {
 				init_options = {
 					fallbackFlags = { "--std=c++20" },
 				},
+			})
+      lspconfig.pyright.setup({
+				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
