@@ -11,14 +11,14 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "clangd", "lua_ls", "ts_ls", "pyright" },
+      ensure_installed = { "clangd", "lua_ls", "ts_ls", "pyright", "tailwindcss-language-server", "eslint-lsp",},
     },
   },
   {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
       lspconfig.ts_ls.setup({
@@ -37,6 +37,12 @@ return {
         },
       })
       lspconfig.pyright.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.eslint.setup({
         capabilities = capabilities,
       })
 
