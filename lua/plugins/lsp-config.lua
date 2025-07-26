@@ -11,7 +11,7 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
-      ensure_installed = { "clangd", "lua_ls", "ts_ls", "pyright", "tailwindcss-language-server", "eslint-lsp",},
+      ensure_installed = { "clangd", "lua_ls", "ts_ls", "pyright" },
     },
   },
   {

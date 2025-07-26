@@ -11,6 +11,8 @@ vim.o.expandtab = true         -- Use spaces instead of tabs
 vim.o.mouse = "a"              -- Enable mouse support
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
+vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true })
 
 -- System clipboard integration
 vim.o.clipboard = "unnamedplus"
