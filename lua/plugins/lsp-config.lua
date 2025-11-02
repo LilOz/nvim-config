@@ -20,30 +20,47 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      lspconfig.ts_ls.setup({
+      -- Define LSP configurations
+      vim.lsp.config("ts_ls", {
         capabilities = capabilities,
       })
-      lspconfig.html.setup({
+
+      vim.lsp.config("html", {
         capabilities = capabilities,
       })
-      lspconfig.lua_ls.setup({
+
+      vim.lsp.config("lua_ls", {
         capabilities = capabilities,
       })
-      lspconfig.clangd.setup({
+
+      vim.lsp.config("clangd", {
         capabilities = capabilities,
         init_options = {
           fallbackFlags = { "--std=c++20" },
         },
       })
-      lspconfig.pyright.setup({
+
+      vim.lsp.config("pyright", {
         capabilities = capabilities,
       })
-      lspconfig.tailwindcss.setup({
+
+      vim.lsp.config("tailwindcss", {
         capabilities = capabilities,
       })
-      lspconfig.eslint.setup({
+
+      vim.lsp.config("eslint", {
         capabilities = capabilities,
+      })
+
+      -- Enable all configured servers
+      vim.lsp.enable({
+        "ts_ls",
+        "html",
+        "lua_ls",
+        "clangd",
+        "pyright",
+        "tailwindcss",
+        "eslint",
       })
 
       vim.diagnostic.config({
